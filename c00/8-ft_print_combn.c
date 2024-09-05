@@ -19,21 +19,6 @@ void ft_putchar(char c)
 
 void ft_print_combn(int n)
 {
-    int arr[n];
-    int i;
-    while (i < n)
-    {
-        arr[i] = 0;
-        i++;
-    }
-    if(arr[i] < 9 && arr[i + 1 ] < 9)
-    {
-        ft_print_combn(arr[i + 1]);
-    }
+    
 }
 
-int main(void)
-{
-    //ft_print_combn(2);
-    printf("%d", 2 == 1);
-}
