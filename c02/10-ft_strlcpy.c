@@ -16,7 +16,7 @@ void    ft_putchar(char c)
 
 unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-    int len;
+    unsigned int len;
     unsigned int i;
 
     len = 0;
