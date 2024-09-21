@@ -4,6 +4,12 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <unistd.h>
+
+void    ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
 
 char *ft_strncpy(char *dest, char *src, unsigned int n)
 {
@@ -18,6 +24,7 @@ char *ft_strncpy(char *dest, char *src, unsigned int n)
         src++;
         i++;
     }
+    // Fill the remaining part with null characters if n > length of src
     while (i < n)
     {
         *dest = '\0';
@@ -30,10 +37,31 @@ char *ft_strncpy(char *dest, char *src, unsigned int n)
 int main(void)
 {
     char src[] = "Hello, World!";
-    char dest[100];
-    printf("%lld\n", strlen(src));
-    printf("%s\n", strncpy(dest,src,8));
-    printf("%s\n", ft_strncpy(dest,src,8));
-
+    char dest[100] = {0};
+    int n;
+    int i;
+    n = 5;
+    ft_strncpy(dest,src,n);
+    i = 0;
+    while (dest[i])
+    {
+        ft_putchar(dest[i]);
+        i++;
+    }
+    ft_putchar('\n');
+    i = 0;
+    while (i < 100)
+    {
+        if (dest[i] == '\0')
+        {
+            printf("\\0");
+        }
+        else
+        {
+            printf("%c", dest[i]);
+        }
+        i++;
+    }
+    
 }
 
