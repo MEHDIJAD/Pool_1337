@@ -22,7 +22,7 @@ int ft_strcmp(char *s1, char *s2)
 
 int main(void)
 {
-    char str1[] = "hallo";
+    char str1[] = "Hello";
     char str2[] = "hello";
     printf("%d\n", strcmp(str1, str2));
     printf("%d\n", ft_strcmp(str1, str2));
