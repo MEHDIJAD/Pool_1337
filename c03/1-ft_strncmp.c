@@ -10,39 +10,33 @@ int ft_strncmp(char *s1, char *s2, unsigned int n)
 
     unsigned int nb;
 
-    if (n == 0)
-    {
+    if (n == 0){
         return (0);
     }
-    
     nb = 0;
     while (*s1 && *s2 && nb < n)
     {
         if (*s1 != *s2){
             return (*s1 - *s2);
         }
-        else{
             s1++;
             s2++;
             nb++;
-        }
     }
-    return (*s1 - *s2);
+    if (nb < n){
+        return (*s1 - *s2);
+    }
+    return (0);
 }
 
 int main(void)
 {
-    char str1[] = "hallooooo";
+    char str1[] = "hello";
     char str2[] = "hello";
-    size_t n;
-
-    n = 0;
-    while (n < 100)
-    {
-        printf("%d\n", strncmp(str1, str2, n));
-        printf("%d\n\n", ft_strncmp(str1, str2, n));
-        n++;
-    }
-
+    int n;
+    
+    n = 4;
+    printf("%d\n", strncmp(str1, str2, n));
+    printf("%d\n", ft_strncmp(str1, str2, n));
     return (0);
 }
